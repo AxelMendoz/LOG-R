@@ -1,34 +1,37 @@
-import { Table, Column, Model, DataType, HasMany, BelongsTo, ForeignKey, Default } from 'sequelize-typescript'
+import { Table, Column, Model, DataType, Default } from 'sequelize-typescript';
 
 @Table({
     tableName: 'usuarios'
 })
-
 class Usuario extends Model {
     @Column({
-        type: DataType.STRING(100)
+        type: DataType.STRING(100),
     })
-    declare nombre: string
+    declare nombre: string;
 
     @Column({
-        type: DataType.STRING(150)
+        type: DataType.STRING(150),
     })
-    declare email: string
-
+    declare email: string;
 
     @Column({
-        type: DataType.STRING(150)
+        type: DataType.STRING(150),
     })
-    declare password: string
+    declare password: string;
 
     @Default('user')
     @Column({
-        type: DataType.STRING(10)
+        type: DataType.STRING(10),
     })
-    declare role: string
+    declare role: string;
+    declare echaNacimiento: string;
 
-
-
+    // Agregar el campo de fecha de nacimiento
+    @Column({
+        type: DataType.DATE,
+        allowNull: false,  // Asegura que no sea nulo
+    })
+    declare fechaNacimiento: Date;  // Fecha de nacimiento
 }
 
-export default Usuario
+export default Usuario;

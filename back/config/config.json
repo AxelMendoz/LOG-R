@@ -1,0 +1,48 @@
+{
+    "development": {
+      "username": "login_registro_user",
+      "password": "iHl47Vl7faDqLsXoE3HG35tpcBhjUH6l",
+      "database": "login_registro",
+      "host": "dpg-cuin2uogph6c73ad14lg-a.oregon-postgres.render.com",
+      "dialect": "postgres",
+      "port": 5432,
+      "url": "postgresql://login_registro_user:iHl47Vl7faDqLsXoE3HG35tpcBhjUH6l@dpg-cuin2uogph6c73ad14lg-a.oregon-postgres.render.com/login_registro",
+      "dialectOptions": {
+        "ssl": {
+          "require": true,
+          "rejectUnauthorized": false
+        }
+      }
+    },
+    "test": {
+      "username": "login_registro_user",
+      "password": "iHl47Vl7faDqLsXoE3HG35tpcBhjUH6l",
+      "database": "login_registro",
+      "host": "dpg-cuin2uogph6c73ad14lg-a.oregon-postgres.render.com",
+      "dialect": "postgres",
+      "port": 5432,
+      "url": "postgresql://login_registro_user:iHl47Vl7faDqLsXoE3HG35tpcBhjUH6l@dpg-cuin2uogph6c73ad14lg-a.oregon-postgres.render.com/login_registro",
+      "dialectOptions": {
+        "ssl": {
+          "require": true,
+          "rejectUnauthorized": false
+        }
+      }
+    },
+    "production": {
+      "username": "login_registro_user",
+      "password": "iHl47Vl7faDqLsXoE3HG35tpcBhjUH6l",
+      "database": "login_registro",
+      "host": "dpg-cuin2uogph6c73ad14lg-a.oregon-postgres.render.com",
+      "dialect": "postgres",
+      "port": 5432,
+      "url": "postgresql://login_registro_user:iHl47Vl7faDqLsXoE3HG35tpcBhjUH6l@dpg-cuin2uogph6c73ad14lg-a.oregon-postgres.render.com/login_registro",
+      "dialectOptions": {
+        "ssl": {
+          "require": true,
+          "rejectUnauthorized": false
+        }
+      }
+    }
+  }
+  

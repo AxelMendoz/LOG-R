@@ -1,3 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Estilos globales para el Login */
+body.login {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFC6DA; /* Color del fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #9D174D; /* Color principal */
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffa8c5; /* Borde con el color principal */
+    border-radius: 5px;
+    background-color: #ffe9f1; /* Fondo de los inputs */
+    color: #333;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #ffa8c5;
+    box-shadow: 0 0 5px #ffa8c5;
+  }
+  
+  button {
+    width: 108%;
+    padding: 10px;
+    background-color: #ffa8c5; /* Color principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff94b8; /* Un tono más oscuro para hover */
+  }
+  

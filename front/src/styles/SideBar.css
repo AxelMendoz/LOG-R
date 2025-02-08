@@ -1,0 +1,84 @@
+.sidebar {
+    width: 250px;
+    background-color: #FFE9F1;
+    color: #ffffff;
+    padding: 10px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    /* position: fixed; */
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 20px; /* Bajarlo un poco más */
+    color: #F472B6;
+}
+
+.sidebar h2:hover {
+    color: #ff1a75;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: rgba(245, 232, 235, 0.8); /* Más translúcido */
+    padding: 15px;
+    border-radius: 15px;
+    margin: 12px 0;
+    color: #F472B6;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    width: 85%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar li:hover {
+    background-color: rgba(245, 232, 235, 1);
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+    color: #ff1a75;
+}
+
+/* Asegurar que los íconos estén bien alineados */
+.sidebar .icon {
+    margin-right: 12px;
+    color: #000000;
+    font-size: 1.2rem; /* Tamaño ligeramente más grande */
+}
+
+/* Mejorando "Cerrar Sesión" */
+.sidebar .logout {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #F472B6;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 15px; /* Más espacio abajo */
+    margin-left: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar .logout:hover {
+    color: #ff1a75;
+    transform: scale(1.05);
+}
