@@ -3,12 +3,14 @@ import Sidebar from '../components/SideBar';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { FaUserCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import '../Styles/Dashboard.css';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const Dashboard = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const data = {
     labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
@@ -21,6 +23,14 @@ const Dashboard = () => {
         tension: 0.4,
       },
     ],
+  };
+
+  // Función para manejar el cierre de sesión
+  const handleLogout = () => {
+    // Eliminar el token del localStorage
+    localStorage.removeItem('TOKEN');
+    // Redirigir a la página de login
+    navigate('/login');
   };
 
   return (
@@ -41,8 +51,9 @@ const Dashboard = () => {
               <div className="dropdown-menu">
                 <ul>
                   <li>Ver Perfil</li>
-                  <li>editar perfil</li>
+                  <li>Editar Perfil</li>
                   <li>Configuración</li>
+                  <li onClick={handleLogout}>Cerrar sesión</li> {/* Aquí agregamos el botón de cerrar sesión */}
                 </ul>
               </div>
             )}

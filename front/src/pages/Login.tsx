@@ -10,7 +10,6 @@ export default function Login() {
   const initialValues = {
     email: "",
     password: "",
-    fechaNacimiento: "",  // Agregado el campo de fecha de nacimiento
   };
 
   const {
@@ -21,15 +20,17 @@ export default function Login() {
 
   const handleLogin = async (formData: any) => {
     try {
-      const { data } = await api.post(`/auth/login`, formData);
+      // Corrige la URL y envía los datos de login al backend
+      const { data } = await api.post("http://localhost:3000/auth/login", formData);
 
       // Almacenar el token en el almacenamiento local
       localStorage.setItem("TOKEN", data.token);
       console.log("Iniciando sesión");
+
       setTimeout(() => {
         navigate("/Dashboard");
         window.location.reload();
-      }, 2000);
+      }, 500);
     } catch (error: any) {
       if (isAxiosError(error) && error.response) {
         console.log(error.response.data.error);
@@ -70,18 +71,6 @@ export default function Login() {
                 })}
               />
               {errors.password && <p className="errorText">{errors.password.message}</p>}
-            </div>
-
-            <div>
-              <label htmlFor="fechaNacimiento">Fecha de Nacimiento</label>
-              <input
-                type="date"
-                id="fechaNacimiento"
-                {...register("fechaNacimiento", {
-                  required: "La fecha de nacimiento es requerida",
-                })}
-              />
-              {errors.fechaNacimiento && <p className="errorText">{errors.fechaNacimiento.message}</p>}
             </div>
 
             <div>

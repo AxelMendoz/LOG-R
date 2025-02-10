@@ -94,7 +94,7 @@
     width: 350px;
     height: 200px;
     transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
-    transform: rotateX(5deg) rotateY(-5deg); /* Efecto sutil */
+    transform: rotateX(-9deg) rotateY(9deg); 
 }
 
 .teamCard:hover {

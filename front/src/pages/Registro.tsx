@@ -8,11 +8,12 @@ export default function Registro() {
     const navigate = useNavigate();
 
     const initialValues = {
-        nombre: '',
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
-        rol: 'usuario', // Establecemos un valor inicial para el rol
-        fechaNacimiento: '', // Campo de fecha de nacimiento
+        role: 'usuario',
+        securityAnswer: '',  // Cambié el campo para coincidir con la respuesta de seguridad
     };
 
     const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
@@ -21,11 +22,11 @@ export default function Registro() {
         console.log("Datos enviados desde el frontend:", formData); // Debug: Verificar datos antes de enviarlos
 
         try {
-            const { data } = await api.post(`/auth/crear-cuenta`, formData);
+            const { data } = await api.post(`/user/create`, formData);
             console.log("Respuesta del backend:", data);
-            
+
             setTimeout(() => {
-                navigate('/');
+                navigate('/login');
             }, 1000);
         } catch (error) {
             if (isAxiosError(error) && error.response) {
@@ -45,9 +46,16 @@ export default function Registro() {
                         <input 
                             type="text" 
                             placeholder="Nombre"
-                            {...register('nombre', { required: 'El nombre es requerido' })}
+                            {...register('firstName', { required: 'El nombre es requerido' })}
                         />
-                        {errors.nombre && <p className="errorMessage">{errors.nombre.message}</p>}
+                        {errors.firstName && <p className="errorMessage">{errors.firstName.message}</p>}
+                        
+                        <input 
+                            type="text" 
+                            placeholder="Apellido"
+                            {...register('lastName', { required: 'El apellido es requerido' })}
+                        />
+                        {errors.lastName && <p className="errorMessage">{errors.lastName.message}</p>}
                         
                         <input 
                             type="email" 
@@ -72,25 +80,29 @@ export default function Registro() {
                         {/* Campo de selección para rol */}
                         <div className="formSelectContainer">
                             <select 
-                                {...register('rol')}
+                                {...register('role')}
                                 className="formSelect"
                             >
                                 <option value="usuario">Usuario</option>
                                 <option value="admin">Admin</option>
                             </select>
-                            {errors.rol && <p className="errorMessage">{errors.rol.message}</p>}
+                            {errors.role && <p className="errorMessage">{errors.role.message}</p>}
                         </div>
 
-                        {/* Campo de Fecha de Nacimiento */}
+                        {/* Campo de Pregunta de Seguridad */}
                         <input 
-                            type="date" 
-                            placeholder="Fecha de Nacimiento"
-                            {...register('fechaNacimiento', { required: 'La fecha de nacimiento es requerida' })}
+                            type="text" 
+                            placeholder="¿Qué edad tienes?"
+                            {...register('securityAnswer', { required: 'La respuesta es requerida' })}
                         />
-                        {errors.fechaNacimiento && <p className="errorMessage">{errors.fechaNacimiento.message}</p>}
+                        {errors.securityAnswer && <p className="errorMessage">{errors.securityAnswer.message}</p>}
 
                         <button type="submit">Registrarse</button>
                     </form>
+                    {/* Div con enlace para regresar al inicio de sesión */}
+                    <div className="redirectToLogin" onClick={() => navigate('/')}>
+                        ¿Ya tienes cuenta? Inicia sesión aquí
+                    </div>
                 </div>
             </div>
 
