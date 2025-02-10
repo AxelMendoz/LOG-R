@@ -1,0 +1,130 @@
+/* Contenedor principal */
+.equiposContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #FFC6DA;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Sidebar con ancho fijo */
+.sidebarContainer {
+    width: 250px; 
+    flex-shrink: 0; 
+}
+
+/* Contenido principal */
+.equiposContent {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    padding-left: 50px; 
+}
+
+/* Estilo del título */
+.title {
+    color: #9D174D;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Botón de Nuevo Equipo */
+.newTeamButton {
+    background-color: #F472B6;
+    color: #fff;
+    font-size: 0.9rem; 
+    font-weight: bold;
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    margin-right: 100px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 45px; 
+}
+
+.newTeamButton svg {
+    font-size: 1rem; 
+}
+
+.newTeamButton:hover {
+    transform: scale(1.05);
+}
+
+.equiposGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mantener dos columnas */
+    gap: 25px; /* Aumentar el espacio entre tarjetas */
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 900px; /* Ajustar el ancho máximo */
+}
+
+/* Tarjetas de Equipos - MÁS GRANDES */
+.teamCard {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 350px;
+    height: 200px;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    transform: rotateX(5deg) rotateY(-5deg); /* Efecto sutil */
+}
+
+.teamCard:hover {
+    transform: rotateX(0deg) rotateY(0deg) translateY(-7px); 
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.2); 
+}
+
+.teamCard h3 {
+    color: #9D174D;
+    font-size: 1.8rem; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Ajustar descripción dentro de las tarjetas */
+.teamCard p {
+    color: #9D174D;
+    font-size: 1.2rem; /* Hacer el texto más grande */
+    font-weight: bold;
+}
+
+/* Ajustar tamaño del icono */
+.teamCard svg {
+    font-size: 2rem; /* Aumentar el tamaño del icono */
+    margin-top: 10px;
+    color: #9D174D;
+}
+
+.members-count {
+    color: #9D174D;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}

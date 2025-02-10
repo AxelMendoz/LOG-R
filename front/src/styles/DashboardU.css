@@ -1,0 +1,117 @@
+
+.dashboard-containerR {
+    display: flex;
+    background-color: #FFC6DA;
+    min-height: 100vh;
+    margin-left: 260px;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 15PX;
+}
+
+.dashboard-contentR {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-cardR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+}
+
+.profile-titleR {
+    text-align: center;
+    flex-grow: 1;
+    color: #9D174D;
+}
+
+.user-iconR {
+    font-size: 2.5rem;
+    color: #000;
+    position: absolute;
+    top: 20px; /* Se sube el icono */
+    right: 20px;
+    cursor: pointer;
+}
+
+.dropdown-menuR {
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    background: rgba(245, 232, 235, 0.8);
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px; /* Reducido */
+    display: flex;
+    flex-direction: column;
+    width: 110px; /* Reducido */
+    z-index: 100;
+}
+
+.dropdown-menuR ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menuR li {
+    padding: 6px; 
+    font-size: 0.9rem; 
+    cursor: pointer;
+    color: #9D174D;
+    transition: background 0.3s ease-in-out;
+    text-align: left;
+}
+
+.dropdown-menuR li:hover {
+    background: #E8D6DA;
+}
+
+.kanban-containerR {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    margin-top: 20px;
+}
+
+/* Columnas del Kanban */
+.kanban-columnR {
+    background-color: #F5E8EB;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.kanban-columnR:hover {
+    transform: scale(1.03);
+}
+
+/* Títulos de las columnas */
+.kanban-columnR h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #9D174D;
+}
+
+.kanban-cardR {
+    background-color: #aa6f83;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.kanban-cardR p {
+    margin: 0;
+}

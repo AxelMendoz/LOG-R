@@ -29,6 +29,26 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="dashboard-content">
+        {/* Contenedor del icono de usuario */}
+        <div className="user-container">
+          <div
+            className="user-icon-container"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <FaUserCircle className="user-icon" />
+            {dropdownOpen && (
+              <div className="dropdown-menu">
+                <ul>
+                  <li>Ver Perfil</li>
+                  <li>editar perfil</li>
+                  <li>Configuración</li>
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+
         {/* Información del perfil */}
         <div className="profile-card">
           <div className="profile-info">
@@ -86,27 +106,6 @@ const Dashboard = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-
-      <div className="right-side-container">
-        <div className="user-container">
-          <div
-            className="user-icon-container"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <FaUserCircle className="user-icon" />
-            {dropdownOpen && (
-              <div className="dropdown-menu">
-                <ul>
-                  <li>Ver Perfil</li>
-                  <li>Configuración</li>
-                  <li>Cerrar Sesión</li>
-                </ul>
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </div>

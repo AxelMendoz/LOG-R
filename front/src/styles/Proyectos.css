@@ -1,0 +1,124 @@
+.proyectos-container {
+    display: flex;
+    background-color: #F5E8EB; 
+    min-height: 100vh; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.proyectos-content {
+    flex: 1; 
+    padding: 20px;
+    margin-left: 250px; 
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px; 
+    flex-shrink: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #9D174D;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 35%;
+}
+
+.nuevo-proyecto-btn {
+    background-color: #F472B6;
+    color: white;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+    width: auto;
+    max-width: 250px;
+}
+
+.nuevo-proyecto-btn:hover {
+    transform: scale(1.1);
+}
+
+.proyectos-table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.proyectos-table {
+    width: 85%; 
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #fff; 
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.proyectos-table th, .proyectos-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.proyectos-table th {
+    background-color: #F472B6;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.proyectos-table td {
+    font-size: 1.1rem;
+}
+
+.status {
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status.progreso {
+    color: #2D9C30;
+    background-color: rgba(45, 156, 48, 0.2);
+}
+
+.status.planeando {
+    color: #D7263D;
+    background-color: rgba(215, 38, 61, 0.2);
+}
+
+.status.finalizado {
+    color: #1D4ED8;
+    background-color: rgba(29, 78, 216, 0.2);
+}
+
+.icon {
+    font-size: 1.3rem;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon.edit {
+    color: #9D174D;
+}
+
+.icon.delete {
+    color: #D7263D;
+}
+
+.icon:hover {
+    transform: scale(1.1) translateY(-3px); /* Aumenta el tamaño y sube */
+}
